@@ -39,9 +39,7 @@ app.post("/generateReport", async (req: Request, res: Response) => {
     const fulfilled = responses.filter(
       (result) => result.status === "fulfilled"
     );
-    console.log({ fulfilled });
     let results = fulfilled.map((r: any) => {
-      console.log("R", r.value.data);
       const {
         value: { data: { record: { key: { origin = {} } = {} } = {} } = {} },
       } = r;
@@ -51,7 +49,6 @@ app.post("/generateReport", async (req: Request, res: Response) => {
         ...r.value.data,
       };
     });
-    console.log({ results });
     res.send(JSON.stringify(results, null, 2));
   }
 });

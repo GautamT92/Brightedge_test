@@ -3,9 +3,6 @@ import { Button, TextField } from "@mui/material";
 import _ from "lodash";
 export default function Filters({ url, setUrl, tableData, fetchData }) {
   const textFieldRef = useRef();
-
-  console.log({ tableData });
-
   return (
     <>
       <TextField

@@ -19,8 +19,9 @@ export default function Dashboard() {
     const response = await generateReport({
       urls: _.uniq([...url, searchFieldText]),
     });
+
     setTableData((prev) =>
-      _.uniqBy([...prev, ...response], ["urlNormalizationDetails.originalUrl"])
+      _.uniqBy([...prev, ...response], "urlNormalizationDetails.originalUrl")
     );
   };
   const handleDelete = (v) => {
